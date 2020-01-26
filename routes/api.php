@@ -18,9 +18,14 @@
 });*/
 
 
-Route::apiResource('/class', 'Api\ClassController');
+/*Route::apiResource('/class', 'Api\ClassController');
 Route::apiResource('/subject', 'Api\SubjectController');
 Route::apiResource('/student', 'Api\StudentController');
 
 
-Route::apiResource('/teams' , 'Api/TeamsController');
+Route::apiResource('/teams' , 'Api/TeamsController');*/
+Route::apiResource('/products', 'ProductController');
+
+Route::group(['prefix'=>'products'], function (){
+   Route::apiResource('/{product}/reviews', 'ReviewController');
+});
