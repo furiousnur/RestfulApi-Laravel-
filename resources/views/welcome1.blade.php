@@ -87,14 +87,30 @@
                 </div>
 
                 <div class="links">
-                    <form action="{{ route('getData.index') }}" method="get" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <button class="btn btn-info" type="submit" name="submit">Send</button>
-                            </div>
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8">
+                            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Team 1</th>
+                                    <th>Team 2</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($items as $data)
+                                        <tr>
+                                            <td>{{ $data->id }}</td>
+                                            <td>{{ $data->t1 }}</td>
+                                            <td>{{ $data->t2 }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                    </form>
+                        <div class="col-lg-2"></div>
+                    </div>
                 </div>
             </div>
         </div>

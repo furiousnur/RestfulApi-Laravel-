@@ -19,3 +19,8 @@
 
 
 Route::apiResource('/class', 'Api\ClassController');
+Route::apiResource('/subject', 'Api\SubjectController');
+Route::apiResource('/student', 'Api\StudentController');
+
+
+Route::apiResource('/teams' , 'Api/TeamsController');
